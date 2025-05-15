@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/* PDF Key Generator Styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-card, .result-card {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mat-mdc-card-header {
+}
+
+.mat-mdc-card-content {
+  padding: 24px;
+}
+
+.form-row {
+  margin-bottom: 1.5rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.type-label {
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.result-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  padding: 16px;
+  border-radius: 4px;
+  word-break: break-all;
+}
+
+.encrypted-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: #333;
+  flex: 1;
+  margin-right: 1rem;
+  overflow-wrap: break-word;
+}
+
+/* Style fixes for mat-button-toggle */
+.mat-button-toggle-group {
+  border-radius: 4px;
+}
+
+.mat-button-toggle {
+  flex: 1;
+  text-align: center;
+}
+
+.mat-button-toggle-checked {
+  background-color: #1976d2 !important;
+  color: white !important;
+}

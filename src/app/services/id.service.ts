@@ -6,7 +6,9 @@ import { IdModel } from '../../models/id.model';
     providedIn: 'root'
 })
 export class IdService {
-    private coreToken: string = ''; // Will be loaded from Rust backend
+    // Using a default core token for demonstration purposes
+    // In production, this would be loaded from a Rust backend
+    private coreToken: string = 'PDF_KEY_GENERATOR_TOKEN_2025'; 
 
     encryptData(data: IdModel, machineId: string): string {
         try {
