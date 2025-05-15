@@ -3,7 +3,7 @@
 
 /* PDF Key Generator Styles */
 .container {
-  max-width: 800px;
+  max-width: 400px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -82,3 +82,19 @@
   background-color: #1976d2 !important;
   color: white !important;
 }
+
+.expand {
+  flex-grow: 1;
+}
+// styles for phone
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+
+}
+

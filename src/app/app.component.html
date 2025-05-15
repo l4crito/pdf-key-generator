@@ -1,16 +1,12 @@
 <div class="container">
+  
   <div class="header-actions">
-    <button 
-      mat-raised-button 
-      color="accent" 
-      (click)="changeToken()" 
-      matTooltip="Cambiar clave de seguridad">
+    <button mat-raised-button color="accent" (click)="changeToken()" matTooltip="Cambiar clave de seguridad">
       <span class="material-icons">key</span> Cambiar Clave
     </button>
   </div>
-
   <mat-card class="form-card">
-    
+
     <mat-card-content>
       <form [formGroup]="idForm" (ngSubmit)="onSubmit()">
         <div class="form-row">
@@ -22,7 +18,7 @@
             </mat-error>
           </mat-form-field>
         </div>
-        
+
         <div class="form-row">
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Valor</mat-label>
@@ -35,52 +31,41 @@
             </mat-error>
           </mat-form-field>
         </div>
-        
+
         <div class="form-row">
           <label class="type-label">Tipo:</label>
           <mat-button-toggle-group formControlName="type" aria-label="Tipo" class="full-width">
-            <mat-button-toggle [value]="idTypes.ADD">Agregar</mat-button-toggle>
+            <mat-button-toggle [value]="idTypes.ADD">Agregar firmas</mat-button-toggle>
             <mat-button-toggle [value]="idTypes.CHANGE_CERTIFICATE">Cambiar Certificado</mat-button-toggle>
           </mat-button-toggle-group>
         </div>
-        
+
         <div class="form-row">
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Descripción (Opcional)</mat-label>
             <textarea matInput formControlName="description" rows="2"></textarea>
           </mat-form-field>
         </div>
-        
+
         <div class="form-actions">
-          <button mat-raised-button color="primary" type="submit" [disabled]="!idForm.valid">
-            Generar Clave
-          </button>
+          @if(encryptedResult){
+            <button mat-icon-button color="primary" (click)="copyToClipboard()" matTooltip="Copiar al portapapeles">
+              <span class="material-icons">content_copy</span>
+            </button>
+          }
+          <div class="expand"></div>
           <button mat-button type="button" (click)="clearForm()">
             Limpiar
+          </button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!idForm.valid">
+            Generar Clave
           </button>
         </div>
       </form>
     </mat-card-content>
   </mat-card>
-  
-  <mat-card *ngIf="encryptedResult" class="result-card">
-    <mat-card-header>
-      <mat-card-title>Clave Generada</mat-card-title>
-    </mat-card-header>
-    
-    <mat-card-content>
-      <div class="result-container">
-        <div class="encrypted-text">{{ encryptedResult }}</div>
-        <button 
-          mat-icon-button 
-          color="primary" 
-          (click)="copyToClipboard()" 
-          matTooltip="Copiar al portapapeles">
-          <span class="material-icons">content_copy</span>
-        </button>
-      </div>
-    </mat-card-content>
-  </mat-card>
+
+
 </div>
 
 <router-outlet></router-outlet>

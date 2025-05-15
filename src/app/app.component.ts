@@ -97,6 +97,8 @@ export class AppComponent implements OnInit {
       };
 
       this.encryptedResult = this.idService.encryptData(idModel, idModel.machineId);
+      this.showToast('Código generado correctamente, se encuentra en el portapapeles');
+      this.clipboard.copy(this.encryptedResult);
     }
   }
 
