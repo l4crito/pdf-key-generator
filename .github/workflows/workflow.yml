@@ -19,6 +19,26 @@ jobs:
           node-version: '18.x'
       - run: yarn install
       - run: npm run ng build -- --base-href="/pdf-key-generator/"
+      
+      # Add steps for PWA configuration
+      - name: Configure PWA with correct base URL
+        run: |
+          # Create a .htaccess file to ensure proper PWA routing
+          echo "RewriteEngine On" > dist/pdf-key-generator/browser/.htaccess
+          echo "RewriteBase /pdf-key-generator/" >> dist/pdf-key-generator/browser/.htaccess
+          echo "RewriteRule ^index\.html$ - [L]" >> dist/pdf-key-generator/browser/.htaccess
+          echo "RewriteCond %{REQUEST_FILENAME} !-f" >> dist/pdf-key-generator/browser/.htaccess
+          echo "RewriteCond %{REQUEST_FILENAME} !-d" >> dist/pdf-key-generator/browser/.htaccess
+          echo "RewriteRule . /pdf-key-generator/index.html [L]" >> dist/pdf-key-generator/browser/.htaccess
+          
+          # The ngsw.json file should be properly configured during build, but we can verify it exists
+          if [ -f "dist/pdf-key-generator/browser/ngsw.json" ]; then
+            echo "Service worker configuration exists"
+          else
+            echo "Service worker configuration not found - check build settings"
+            exit 1
+          fi
+      
       # - run: npm run ng test -- --browsers ChromeHeadless
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
