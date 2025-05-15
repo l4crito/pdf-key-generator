@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'tocopy' title`, () => {
+  it(`should have the 'pdf-key-generator' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('tocopy');
+    expect(app.title).toEqual('pdf-key-generator');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, tocopy');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, pdf-key-generator');
   });
 });
