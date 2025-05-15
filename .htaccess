@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /pdf-key-generator/
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /pdf-key-generator/index.html [L]

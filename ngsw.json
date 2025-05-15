@@ -1,0 +1,79 @@
+{
+  "configVersion": 1,
+  "timestamp": 1747345863084,
+  "index": "/pdf-key-generator/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/pdf-key-generator/favicon.ico",
+        "/pdf-key-generator/index.html",
+        "/pdf-key-generator/main-PBAXNKIC.js",
+        "/pdf-key-generator/manifest.webmanifest",
+        "/pdf-key-generator/polyfills-FFHMD2TL.js",
+        "/pdf-key-generator/styles-SLZW3EQN.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/pdf-key-generator/icons/icon-128x128.png",
+        "/pdf-key-generator/icons/icon-144x144.png",
+        "/pdf-key-generator/icons/icon-152x152.png",
+        "/pdf-key-generator/icons/icon-192x192.png",
+        "/pdf-key-generator/icons/icon-384x384.png",
+        "/pdf-key-generator/icons/icon-512x512.png",
+        "/pdf-key-generator/icons/icon-72x72.png",
+        "/pdf-key-generator/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/pdf-key-generator/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/pdf-key-generator/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/pdf-key-generator/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/pdf-key-generator/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/pdf-key-generator/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/pdf-key-generator/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/pdf-key-generator/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/pdf-key-generator/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/pdf-key-generator/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/pdf-key-generator/index.html": "485c15f9ba17f643b5507c392e1415fa1f9eb7aa",
+    "/pdf-key-generator/main-PBAXNKIC.js": "92d8d0b2921c3ef3fcb93da9c4ddca73e241f58b",
+    "/pdf-key-generator/manifest.webmanifest": "db1a94e78fa5f049f1f9126bb890a8d4212fc4c6",
+    "/pdf-key-generator/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
+    "/pdf-key-generator/styles-SLZW3EQN.css": "c3ec262c8cfcf6ee5e3112ca7f1a34247c6a5829"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
