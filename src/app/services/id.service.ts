@@ -6,9 +6,14 @@ import { IdModel } from '../../models/id.model';
     providedIn: 'root'
 })
 export class IdService {
-    // Using a default core token for demonstration purposes
-    // In production, this would be loaded from a Rust backend
-    private coreToken: string = 'PDF_KEY_GENERATOR_TOKEN_2025'; 
+    private readonly TOKEN_KEY = 'pdf_key_generator_token';
+    private readonly DEFAULT_TOKEN = 'PDF_KEY_GENERATOR_TOKEN_2025';
+    private coreToken: string;
+
+    constructor() {
+        // Intenta cargar el token desde localStorage al inicializar el servicio
+        this.coreToken = this.getTokenFromStorage() || this.DEFAULT_TOKEN;
+    }
 
     encryptData(data: IdModel, machineId: string): string {
         try {
@@ -27,5 +32,21 @@ export class IdService {
     public getKey(machineId: string): string {
         const machineIdHash = CryptoJS.SHA256(machineId).toString();
         return this.coreToken + machineIdHash.substring(0, 16);
+    }
+
+    public hasToken(): boolean {
+        return !!this.getTokenFromStorage();
+    }
+
+    public saveToken(token: string): void {
+        if (!token || token.trim() === '') {
+            throw new Error('El token no puede estar vacío');
+        }
+        localStorage.setItem(this.TOKEN_KEY, token);
+        this.coreToken = token;
+    }
+
+    public getTokenFromStorage(): string | null {
+        return localStorage.getItem(this.TOKEN_KEY);
     }
 }

@@ -8,6 +8,13 @@
   padding: 2rem;
 }
 
+/* Header actions section */
+.header-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
 .form-card, .result-card {
   margin-bottom: 2rem;
   border-radius: 8px;
